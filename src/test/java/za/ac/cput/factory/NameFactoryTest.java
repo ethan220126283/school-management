@@ -16,4 +16,32 @@ class NameFactoryTest {
         System.out.println(name);
         assertNotNull(name);
     }
+
+    @org.junit.jupiter.api.Test
+    void createNullName() {
+        Name name = NameFactory.createName(null,null,null);
+        System.out.println(name);
+        assertNull(name);
+    }
+
+    @org.junit.jupiter.api.Test
+    void createFirstName() {
+        Name name = NameFactory.createName("James",null,null);
+        System.out.println(name);
+        assertNull(name);
+    }
+
+    @org.junit.jupiter.api.Test
+    void createLastName() {
+        Name name = NameFactory.createName(null,null,"Smith");
+        System.out.println(name);
+        assertNull(name);
+    }
+
+    @org.junit.jupiter.api.Test
+    void createFirstAndLastName() {
+        Name name = NameFactory.createName("James",null,"Smith");
+        System.out.println(name);
+        assertNotNull(name);
+    }
 }
