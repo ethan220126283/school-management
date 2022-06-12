@@ -6,6 +6,7 @@ import za.ac.cput.domain.City;
 
 /**
  * Unit testing
+ * Student Number - 206006330
  */
 
 public class CityFactoryTest extends TestCase {

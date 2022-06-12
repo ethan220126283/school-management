@@ -1,7 +1,8 @@
 package za.ac.cput.domain;
 
 /**
- * Using Builder 
+ * Using Builder
+ * Student Number - 206006330
  */
 
 public class City {
