@@ -12,8 +12,7 @@ public class NameFactory {
             return null;
         }
 
-        return new Name.Builder()
-                .theirFirstName(firstName)
+        return new Name.Builder(firstName)
                 .theirMiddleName(middleName)
                 .theirLastName(lastName)
                 .build();

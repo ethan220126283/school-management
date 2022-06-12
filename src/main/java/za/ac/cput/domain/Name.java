@@ -8,9 +8,9 @@ public class Name {
 
     //Private Constructors
     private Name(Builder builder) {
-        this.firstName = firstName;
-        this.middleName = middleName;
-        this.lastName = lastName;
+        this.firstName = builder.firstName;
+        this.middleName = builder.middleName;
+        this.lastName = builder.lastName;
     }
 
     private Name() {
@@ -49,14 +49,10 @@ public class Name {
         private String middleName;
         private String lastName;
 
-        public Builder() {
-
+        public Builder(String firstName) {
+            this.firstName = firstName;
         };
 
-        public Builder theirFirstName(String firstName) {
-            this.firstName = firstName;
-            return this;
-        }
 
         public Builder theirMiddleName(String middleName) {
             this.middleName = middleName;
