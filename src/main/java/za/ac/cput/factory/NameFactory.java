@@ -9,7 +9,7 @@ public class NameFactory {
     public static Name createName(String firstName, String middleName, String lastName){
 
         if (Helper.isNullorEmpty(firstName) || Helper.isNullorEmpty(lastName)){
-            return null;
+            throw new IllegalArgumentException("firstName and lastName mandatory attributes.");
         }
 
         return new Name.Builder(firstName)
