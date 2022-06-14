@@ -16,6 +16,7 @@ public class Name {
     private Name() {
     }
 
+
     //Getters
     public String getFirstName() {
         return firstName;
@@ -43,7 +44,7 @@ public class Name {
     }
 
     //Builder Class
-    public static class Builder{
+    public static class Builder {
 
         private String firstName;
         private String middleName;
@@ -51,7 +52,9 @@ public class Name {
 
         public Builder() {
 
-        };
+        }
+
+        ;
 
         public Builder theirFirstName(String firstName) {
             this.firstName = firstName;
@@ -68,24 +71,29 @@ public class Name {
             return this;
         }
 
-        public Builder copy(Name name){
+        public Builder copy(Name name) {
             this.firstName = name.firstName;
             this.middleName = name.middleName;
             this.lastName = name.lastName;
             return this;
         }
 
+
         public Name build(){
             return new Name(this);
         }
     }
 
-    @Override
-    public String toString() {
-        return "Name{" +
-                "firstName='" + firstName + '\'' +
-                ", middleName='" + middleName + '\'' +
-                ", lastName='" + lastName + '\'' +
-                '}';
+
+
+
+        @Override
+        public String toString() {
+            return "Name{" +
+                    "firstName='" + firstName + '\'' +
+                    ", middleName='" + middleName + '\'' +
+                    ", lastName='" + lastName + '\'' +
+                    '}';
+        }
     }
-}
+
