@@ -1,5 +1,10 @@
 package za.ac.cput.domain;
 
+/* Student#: 220126283
+ *  Name: Ethan Christopher Swart
+ *  Subject: ADP3
+ * */
+
 public class Name {
 
     private String firstName;
@@ -76,6 +81,7 @@ public class Name {
         }
     }
 
+    //toString method
     @Override
     public String toString() {
         return "Name{" +
