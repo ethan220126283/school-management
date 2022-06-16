@@ -12,9 +12,8 @@ public class StudentFactoryTest extends TestCase {
 
     @Test
     public void test() throws IllegalAccessException {
-
-
         Student student= StudentFactory.createStudent("fs","gdrg", NameFactory.createName("sfd","sdfd","sdf"));
+        System.out.println(student);
         assertNotNull(student);
     }
 
