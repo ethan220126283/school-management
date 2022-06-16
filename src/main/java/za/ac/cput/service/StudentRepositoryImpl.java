@@ -4,6 +4,8 @@ import za.ac.cput.domain.Student;
 import za.ac.cput.repository.StudentRepository;
 
 import javax.persistence.EntityManager;
+import javax.persistence.TypedQuery;
+import javax.persistence.criteria.CriteriaBuilder;
 import java.util.List;
 
 public class StudentRepositoryImpl implements StudentRepository {
@@ -21,7 +23,8 @@ public class StudentRepositoryImpl implements StudentRepository {
 
     @Override
     public List<Student> getAll() {
-        return null;
+        TypedQuery<Student> q = em.createQuery("SELECT * FROM Student",Student.class);
+        return q.getResultList();
     }
 
     @Override
