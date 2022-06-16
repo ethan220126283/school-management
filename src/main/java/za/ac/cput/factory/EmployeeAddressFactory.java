@@ -11,14 +11,9 @@ import za.ac.cput.util.Helper;
 public class EmployeeAddressFactory {
     public static EmployeeAddress build(String staffId, Address address){
         if (Helper.isNullorEmpty(staffId)) {
-            //Helper.isNullorEmpty(address);
+            Helper.checkObjectNull("address", address);
             throw new IllegalArgumentException("staffID and address");
         }
         return new EmployeeAddress.Builder().StaffId(staffId).Address(address).build();
-    }
-
-    public static EmployeeAddress.EmployeeAddressId buildId(EmployeeAddress employeeAddress){
-        return new EmployeeAddress.EmployeeAddressId(employeeAddress.getStaffId(),
-                employeeAddress.getAddress());
     }
 }
