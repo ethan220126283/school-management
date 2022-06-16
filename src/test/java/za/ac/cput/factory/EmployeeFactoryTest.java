@@ -12,10 +12,14 @@ import za.ac.cput.domain.Name;
 import static org.junit.jupiter.api.Assertions.*;
 
 class EmployeeFactoryTest {
+    Name name = NameFactory.createName(
+            "Lana",
+            "",
+            "Africa"
+    );
 
     @Test
     void buildWorking() {
-        Name name = NameFactory.createName("John","James","Smith");
         Employee employee = EmployeeFactory.build("1", "testmail@gmail.com", name);
         System.out.println(employee);
         assertNotNull(employee);
@@ -27,6 +31,13 @@ class EmployeeFactoryTest {
                    .assertThrows(IllegalArgumentException.class,
                () -> {Employee employee = EmployeeFactory.build(null, null, null);},
                     "IllegalArgumentException expected");
-        //assertEquals("StaffID and email", "",exception.getMessage());
+    }
+
+    @Test
+    void buildNullEmail(){
+        Exception exception = assertThrows(IllegalArgumentException.class,
+                () -> EmployeeFactory.build("20", null, name));
+        String message = exception.getMessage();
+        System.out.println(message);
     }
    }
