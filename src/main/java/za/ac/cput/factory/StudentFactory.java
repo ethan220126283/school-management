@@ -10,7 +10,7 @@ public class StudentFactory {
         public static Student createStudent(String studentId, String email, Name name) {
 
                 if (Helper.isNullorEmpty(studentId) ||Helper.isNullorEmpty(email)|| Helper.isNullorEmpty(String.valueOf(name))){
-                        return null;
+                        throw new IllegalArgumentException("studentId, email and name");
                 }
 
         return new Student.Builder()
@@ -18,8 +18,6 @@ public class StudentFactory {
                 .setEmail(email)
                 .setName(name)
                 .build();
-
-
         }
 
 

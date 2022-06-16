@@ -1,5 +1,10 @@
 package za.ac.cput.factory;
 
+/* Student#: 220126283
+ *  Name: Ethan Christopher Swart
+ *  Subject: ADP3
+ * */
+
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.function.Executable;
 import za.ac.cput.domain.Name;
@@ -10,6 +15,7 @@ import static org.junit.jupiter.api.Assertions.*;
 
 class NameFactoryTest {
 
+    //Test for creating a name entity with all attributes
     @org.junit.jupiter.api.Test
     void createName() {
         Name name = NameFactory.createName(
@@ -21,6 +27,7 @@ class NameFactoryTest {
         assertNotNull(name);
     }
 
+    //Test for creating a name entity without middleName attribute
     @org.junit.jupiter.api.Test
     void createFirstAndLastName() {
         Name name = NameFactory.createName("James",null,"Smith");
@@ -28,6 +35,7 @@ class NameFactoryTest {
         assertNotNull(name);
     }
 
+    //Test for creating a name entity with no attributes
     @org.junit.jupiter.api.Test
     void createFailName() {
         IllegalArgumentException thrown = Assertions
