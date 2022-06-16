@@ -15,7 +15,8 @@ class EmployeeFactoryTest {
 
     @Test
     void buildWorking() {
-        Employee employee = EmployeeFactory.build("1", "testmail@gmail.com", null);
+        Name name = NameFactory.createName("John","James","Smith");
+        Employee employee = EmployeeFactory.build("1", "testmail@gmail.com", name);
         System.out.println(employee);
         assertNotNull(employee);
     }
