@@ -64,13 +64,15 @@ public class City {
         }
         //This is optional
         public Builder copy(City city){
-            this.id = city.name;
+            this.id = city.id;
             this.name = city.name;
             return this;
         }
-        public City builder(){
+        public City build(){
             return new City(this);
         }
+
+
     }
 
 }
