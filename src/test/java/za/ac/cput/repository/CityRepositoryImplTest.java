@@ -1,4 +1,4 @@
-package za.ac.cput.repository;
+/*package za.ac.cput.repository;
 
 import junit.framework.TestCase;
 import org.junit.Test;
@@ -6,6 +6,7 @@ import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import za.ac.cput.domain.City;
 import za.ac.cput.factory.CityFactory;
+import za.ac.cput.repository.Impl.CityRepositoryImpl;
 
 public class CityRepositoryImplTest extends TestCase {
 
@@ -36,4 +37,4 @@ public class CityRepositoryImplTest extends TestCase {
 
     public void testFindAll() {
     }
-}
+}*/
