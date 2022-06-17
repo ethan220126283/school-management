@@ -25,40 +25,26 @@ public class CityRepositoryImplTest extends TestCase {
     @BeforeEach public void setUp(){
         this.city = CityFactory.build("test-id","test-name");
         this.repository = CityRepositoryImpl.cityRepository();
+        City saved = this.repository.save(this.city);
+        assertSame(this.city,saved);
     }
 
     @AfterEach public void tearDown(){
         this.repository.delete(this.city);
+        List<City> cityList = this.repository.findAll();
+        assertEquals(0 , cityList.size());
     }
 
     @Test
-    void Save() {
-        City saved = this.repository.save(this.city);
-        System.out.println(saved);
-        assertNotNull(saved);
-        assertSame(this.city,saved);
-    }
-    @Test
     void Read() {
-        City saved = this.repository.save(this.city);
-        Optional<City> read = this.repository.read(saved.getId());
+        Optional<City> read = this.repository.read(this.city.getId());
         assertAll(
                 () -> assertTrue(read.isPresent()),
-                () -> assertSame(saved, read.get())
+                () -> assertSame(this.city, read.get())
         );
     }
     @Test
-    void Delete() {
-        City saved = this.repository.save(this.city);
-        List<City> cityList = this.repository.findAll();
-        assertEquals(1 , cityList.size());
-        this.repository.delete(saved);
-        cityList = this.repository.findAll();
-        assertEquals(0 , cityList.size());
-    }
-    @Test
     void FindAll() {
-        this.repository.save(this.city);
         List<City> cityList = this.repository.findAll();
         assertEquals(1 , cityList.size());
     }
