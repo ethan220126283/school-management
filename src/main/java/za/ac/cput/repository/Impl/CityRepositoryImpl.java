@@ -1,6 +1,7 @@
-package za.ac.cput.repository;
+package za.ac.cput.repository.Impl;
 
 import za.ac.cput.domain.City;
+import za.ac.cput.repository.CityRepository;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -11,7 +12,7 @@ import java.util.Optional;
  * Student Number - 206006330
  */
 
-public class CityRepositoryImpl implements CityRepository{
+//public class CityRepositoryImpl implements CityRepository {
 
     //CRUD data store
 
@@ -38,7 +39,7 @@ public class CityRepositoryImpl implements CityRepository{
         //return all in your store
         return null;
     }*/
-
+/*
     private final List<City> cityList;
     private static CityRepositoryImpl CITY_REPOSITORY;
 
@@ -72,4 +73,4 @@ public class CityRepositoryImpl implements CityRepository{
     public List<City> findAll() {
         return null;
     }
-}
+}*/

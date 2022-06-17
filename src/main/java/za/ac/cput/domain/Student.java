@@ -1,19 +1,22 @@
 package za.ac.cput.domain;
 
-//import za.ac.cput.domain.Name;
 
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import org.springframework.beans.factory.annotation.Autowired;
+
+import javax.persistence.*;
+import javax.validation.constraints.NotNull;
+import java.io.Serializable;
 
 @Entity
-@Table(name = "STUDENT")
-public class Student {
+public class Student implements Serializable {
 
+    @NotNull
     @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private String studentId;
 
     private String email;
+
     private Name name;
 
 
@@ -23,6 +26,8 @@ public class Student {
         this.email = builder.email;
         this.name = builder.name;
     }
+
+    protected Student() {}
 
     //Getters
     public String getStudentId() {

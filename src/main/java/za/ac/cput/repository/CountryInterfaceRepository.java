@@ -8,10 +8,10 @@ import java.util.Optional;
         Student: Darryll Merkeur (220253595)
         Date: 18 June 2022
 */
-@Repository
+/*@Repository
 public interface CountryInterfaceRepository extends JpaRepository<Country,Country.CountryIdentity> {
     Optional<Country> read(Country.CountryIdentity countryIdentity);
 
     List<Country> findAll();
     List<Country> findByCountryId(String countryId);
-}
+}*/

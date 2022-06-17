@@ -1,4 +1,5 @@
-package za.ac.cput.service.impl;
+//220126283
+/*package za.ac.cput.repository.Impl;
 
 import za.ac.cput.domain.Student;
 import za.ac.cput.repository.StudentRepository;
@@ -8,13 +9,14 @@ import java.util.List;
 import java.util.Optional;
 
 public class StudentRepositoryImpl implements StudentRepository {
-
     private final List<Student> studentList;
     private static StudentRepositoryImpl STUDENT_REPOSITORY;
 
-    private StudentRepositoryImpl() { this.studentList = new ArrayList<>(); }
+    private StudentRepositoryImpl() {
+        this.studentList = new ArrayList<>();
+    }
 
-    private static StudentRepositoryImpl studentRepository() {
+    public static StudentRepositoryImpl studentRepository() {
         if (STUDENT_REPOSITORY == null)
             STUDENT_REPOSITORY = new StudentRepositoryImpl();
         return STUDENT_REPOSITORY;
@@ -34,7 +36,11 @@ public class StudentRepositoryImpl implements StudentRepository {
                 .findFirst();
     }
 
-    public void delete(Student student) { this.studentList.remove(student); }
+    public void delete(Student student) {
+        this.studentList.remove(student);
+    }
 
-    public List<Student> findAll() { return this.studentList; }
-}
+    public List<Student> findAll() {
+        return this.studentList;
+    }
+}*/
