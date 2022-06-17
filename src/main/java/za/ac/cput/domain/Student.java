@@ -10,9 +10,7 @@ import java.io.Serializable;
 @Entity
 public class Student implements Serializable {
 
-    @NotNull
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
     private String studentId;
 
     private String email;
