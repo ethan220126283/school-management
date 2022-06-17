@@ -18,8 +18,7 @@ public class Name {
         this.lastName = builder.lastName;
     }
 
-    private Name() {
-    }
+    private Name() {}
 
     //Getters
     public String getFirstName() {
