@@ -13,6 +13,7 @@ public class CityFactory {
     public static City createCity(String id, String name){
 
         if (Helper.isNullorEmpty(id) || Helper.isNullorEmpty(name))
+            //tell caller that we need you to provide id or city name
             throw new IllegalArgumentException("id and or name");
             return new City.Builder()
                 .setId(id)

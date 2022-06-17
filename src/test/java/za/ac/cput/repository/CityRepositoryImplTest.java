@@ -7,6 +7,16 @@ import org.junit.jupiter.api.BeforeEach;
 import za.ac.cput.domain.City;
 import za.ac.cput.factory.CityFactory;
 
+import java.util.List;
+import java.util.Optional;
+
+import static org.junit.jupiter.api.Assertions.assertAll;
+
+/**
+ * Working on Test cases for City
+ * Student Number - 206006330
+ */
+
 public class CityRepositoryImplTest extends TestCase {
 
     private City city;
@@ -24,16 +34,32 @@ public class CityRepositoryImplTest extends TestCase {
     @Test
     void Save() {
         City saved = this.repository.save(this.city);
+        System.out.println(saved);
         assertNotNull(saved);
         assertSame(this.city,saved);
     }
-
-    public void testRead() {
+    @Test
+    void Read() {
+        City saved = this.repository.save(this.city);
+        Optional<City> read = this.repository.read(saved.getId());
+        assertAll(
+                () -> assertTrue(read.isPresent()),
+                () -> assertSame(saved, read.get())
+        );
     }
-
-    public void testDelete() {
+    @Test
+    void Delete() {
+        City saved = this.repository.save(this.city);
+        List<City> cityList = this.repository.findAll();
+        assertEquals(1 , cityList.size());
+        this.repository.delete(saved);
+        cityList = this.repository.findAll();
+        assertEquals(0 , cityList.size());
     }
-
-    public void testFindAll() {
+    @Test
+    void FindAll() {
+        this.repository.save(this.city);
+        List<City> cityList = this.repository.findAll();
+        assertEquals(1 , cityList.size());
     }
 }
