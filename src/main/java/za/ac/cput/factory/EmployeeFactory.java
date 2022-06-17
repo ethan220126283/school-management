@@ -11,10 +11,10 @@ import za.ac.cput.util.Helper;
 public class EmployeeFactory {
     public static Employee build(String staffId, String email, Name name){
 
-        if (Helper.isNullorEmpty(staffId) || Helper.isNullorEmpty(email)){
-            throw new IllegalArgumentException("staffId, email and name");
-        }
-         //Helper.isNullorEmpty(name.getFirstName());
+        Helper.isNullorEmpty(staffId);
+        Helper.isNullorEmpty(email);
+        Helper.emailValid(email);
+        Helper.checkObjectNull("name", name);
 
         return new Employee.Builder().StaffId(staffId).Email(email).Name(name).build();
     }

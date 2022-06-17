@@ -2,17 +2,25 @@ package za.ac.cput.domain;
 /*
     Entity for Employee Address
     Author: Lana Africa (216166640)
-    Date: 10 June 2022
+
 */
+import javax.persistence.Embedded;
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.validation.constraints.NotNull;
 import java.io.Serializable;
 import java.util.Objects;
 
+@Entity
 public class EmployeeAddress implements Serializable {
+    @Id
+    @NotNull
     private String staffId;
+    @Embedded
+    @NotNull
     private Address address;
 
-    public EmployeeAddress() {
-    }
+    protected EmployeeAddress() { }
 
     private EmployeeAddress(Builder builder){
         this.staffId = builder.staffId;
@@ -35,37 +43,18 @@ public class EmployeeAddress implements Serializable {
                 '}';
     }
 
-    //Very unsure of this.
-    public static class EmployeeAddressId {
-        private final String staffId;
-        private final Address address;
-
-        public EmployeeAddressId(String staffId, Address address) {
-            this.staffId = staffId;
-            this.address = address;
-        }
-
-        public String getStaffId() {
-            return staffId;
-        }
-
-        public Address getAddress() {
-            return address;
-        }
-
         @Override
         public boolean equals(Object o) {
             if (this == o) return true;
             if (o == null || getClass() != o.getClass()) return false;
-            EmployeeAddressId that = (EmployeeAddressId) o;
-            return Objects.equals(staffId, that.staffId) && Objects.equals(address, that.address);
+            EmployeeAddress employeeAddress = (EmployeeAddress) o;
+            return Objects.equals(staffId, employeeAddress.staffId) && Objects.equals(address, employeeAddress.address);
         }
 
         @Override
         public int hashCode() {
             return Objects.hash(staffId, address);
         }
-    }
 
     public static class Builder{
         private String staffId;

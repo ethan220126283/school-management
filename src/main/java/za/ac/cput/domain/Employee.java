@@ -2,13 +2,24 @@ package za.ac.cput.domain;
 /*
     Entity for Employee
     Author: Lana Africa (216166640)
-    Date: 10 June 2022
+
 */
+import javax.persistence.Embedded;
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.validation.constraints.NotNull;
+import java.io.Serializable;
 import java.util.Objects;
 
-public class Employee {
+@Entity
+public class Employee implements Serializable {
+    @Id
+    @NotNull
     private String staffId;
+    @NotNull
     private String email;
+    @Embedded
+    @NotNull
     private Name name;
 
     protected Employee(){}
@@ -50,7 +61,7 @@ public class Employee {
 
     @Override
     public int hashCode() {
-        return Objects.hash(staffId);
+        return Objects.hash(staffId, email, name);
     }
 
     public static class Builder{

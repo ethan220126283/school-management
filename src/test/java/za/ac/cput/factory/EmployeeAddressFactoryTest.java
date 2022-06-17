@@ -5,15 +5,23 @@ package za.ac.cput.factory;
     Date: 11 June 2022
 */
 import org.junit.jupiter.api.Test;
-import za.ac.cput.domain.Employee;
+import za.ac.cput.domain.Address;
 import za.ac.cput.domain.EmployeeAddress;
 import static org.junit.jupiter.api.Assertions.*;
 
 class EmployeeAddressFactoryTest {
+    Address address = AddressFactory.createAddress(
+            "10",
+            "Complex 1",
+            "10",
+            "Street Street",
+            1000,
+            null
+    );
 
     @Test
     void buildWorking() {
-        EmployeeAddress employeeAddress = EmployeeAddressFactory.build("1",null);
+        EmployeeAddress employeeAddress = EmployeeAddressFactory.build("1",address);
         System.out.println(employeeAddress);
         assertNotNull(employeeAddress);
     }
