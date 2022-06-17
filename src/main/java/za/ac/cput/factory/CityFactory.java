@@ -12,12 +12,15 @@ public class CityFactory {
     //Creating User Objects
     public static City createCity(String id, String name){
 
-        if (Helper.isNullorEmpty(id) || Helper.isNullorEmpty(name)){
-            return null;
-        }
-        return new City.Builder()
+        if (Helper.isNullorEmpty(id) || Helper.isNullorEmpty(name))
+            throw new IllegalArgumentException("id and or name");
+            return new City.Builder()
                 .setId(id)
                 .setName(name)
-                .builder();
+                .build();
+    }
+
+    public static City build(String id, String name) {
+        return null;
     }
 }

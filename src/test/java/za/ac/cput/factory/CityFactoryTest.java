@@ -21,5 +21,22 @@ public class CityFactoryTest extends TestCase {
         assertTrue(true);
     }
 
+    //Trying something new
+
+    /*@org.junit.jupiter.api.Test
+    public void createCity(){
+        City city = CityFactory.createCity("test_id","test_name");
+        assertNotNull(city);
+        System.out.println(city);
+    }
+    @org.junit.jupiter.api.Test
+    void createId(){
+        City city = CityFactory.createCity("test_id","test_name");
+        assertNotNull(city);
+        System.out.println(city);
+
+
+    }*/
+
 
 }
