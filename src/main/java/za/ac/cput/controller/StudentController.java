@@ -16,10 +16,10 @@ public class StudentController {
     private StudentRepository studentRepository;
 
     @PostMapping(path = "/add")
-    public @ResponseBody String addNewStudent (@RequestParam String email
+    public @ResponseBody String addNewStudent (@RequestParam String studentId, @RequestParam String email
     , @RequestParam Name name) {
 
-        Student s = StudentFactory.createStudent(email,name);
+        Student s = StudentFactory.createStudent(studentId,email,name);
         studentRepository.save(s);
         return "Saved";
     }

@@ -5,11 +5,17 @@ package za.ac.cput.domain;
  *  Subject: ADP3
  * */
 
-public class Name {
+
+import javax.persistence.Embeddable;
+import java.util.Objects;
+
+
+public class Name  {
 
     private String firstName;
     private String middleName;
     private String lastName;
+
 
     //Private Constructors
     private Name(Builder builder) {
@@ -18,7 +24,6 @@ public class Name {
         this.lastName = builder.lastName;
     }
 
-    private Name() {}
 
     //Getters
     public String getFirstName() {
@@ -88,5 +93,20 @@ public class Name {
                 ", middleName='" + middleName + '\'' +
                 ", lastName='" + lastName + '\'' +
                 '}';
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Name that = (Name) o;
+        return firstName.equals(that.firstName)
+                && middleName.equals(that.middleName)
+                && lastName.equals(that.lastName);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(firstName,middleName,lastName);
     }
 }
