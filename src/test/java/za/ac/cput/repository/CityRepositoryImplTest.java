@@ -11,7 +11,7 @@ import za.ac.cput.repository.Impl.CityRepositoryImpl;
 import java.util.List;
 import java.util.Optional;
 
-import static org.junit.jupiter.api.Assertions.assertAll;
+import static org.junit.jupiter.api.Assertions.*;
 
 /**
  * Working on City Rep Test
