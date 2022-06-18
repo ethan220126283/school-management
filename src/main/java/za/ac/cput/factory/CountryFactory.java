@@ -25,8 +25,8 @@ public class CountryFactory {
         //}
 
             return new Country.Builder()
-                    .setId(id)
-                    .setName(name)
+                    //.setId(id)
+                   // .setName(name)
                     .build();
 
         }

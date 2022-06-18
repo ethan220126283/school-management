@@ -37,7 +37,7 @@ class EmployeeAddressControllerTest {
 
     @BeforeEach
     void setUp(){
-        City city = CityFactory.build("12", "Cape Town");
+        City city = CityFactory.createCity("12", "Cape Town",null);
         Address address = AddressFactory.createAddress("1", "Complex 1", "5", "Street Street", 1000,city);
         this.employeeAddress = EmployeeAddressFactory.build("12", address);
         this.baseUrl = "Http://localhost:" + this.port + "/school-management/employeeAddress";

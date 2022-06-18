@@ -4,19 +4,32 @@ package za.ac.cput.domain;
  * Using Builder
  * Student Number - 206006330
  */
-
 public class City {
 
     private String id;
     private String name;
+    private Country country;
 
     //Private Constructors
-    private City(Builder builder){
+   private City(Builder builder){
         this.id = builder.id;
         this.name = builder.name;
+        this.country = builder.country;
     }
-    private City(){
 
+    //Setters
+
+
+    public void setId(String id) {
+        this.id = id;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public void setCountry(Country country) {
+        this.country = country;
     }
 
     //Getters
@@ -27,50 +40,50 @@ public class City {
     public String getName() {
         return name;
     }
-    //Setters
 
-    public void setId(String id) {
-        this.id = id;
+    public Country getCountry() {
+        return country;
     }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    @Override
-    public String toString() {
-        return "City{" +
-                "id='" + id + '\'' +
-                ", name='" + name + '\'' +
-                '}';
-    }
-
     //Builder Class
-    public static class Builder{
+    public static class Builder {
         private String id;
         private String name;
+        private Country country;
 
-        public Builder(){
-
-        };
-
-        public Builder setId(String id){
+        public Builder(String id) {
             this.id = id;
-            return this;
         }
-        public Builder setName(String name){
+        public Builder theirName(String name) {
             this.name = name;
             return this;
         }
-        //This is optional
-        public Builder copy(City city){
-            this.id = city.id;
-            this.name = city.name;
+
+        public Builder theirCountry(Country country) {
+            this.name = name;
             return this;
         }
-        public City build(){
+
+        //This is optional
+        public Builder copy(City city) {
+            this.id = city.id;
+            this.name = city.name;
+            this.country = city.country;
+            return this;
+        }
+
+        public City build() {
             return new City(this);
         }
+
+    }
+
+        @Override
+        public String toString() {
+            return "City{" +
+                    "id='" + id + '\'' +
+                    ", name='" + name + '\'' +
+                    ", country=" + country +
+                    '}';
 
 
     }

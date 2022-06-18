@@ -11,16 +11,11 @@ import za.ac.cput.domain.City;
 
 public class CityFactoryTest extends TestCase {
     @Test
-    public void test(){
-        City city = CityFactory.createCity("7100", "Cape Town");
-        System.out.println(city.toString());
+    public void test() throws IllegalArgumentException{
+        City city = CityFactory.createCity("7100", "Cape Town", null);
+        System.out.println(city);
+        assertNotNull(city);
     }
-
-    @Test
-    public void shouldAnswerWithTrue(){
-        assertTrue(true);
-    }
-
     //Trying something new
 
     /*@org.junit.jupiter.api.Test
