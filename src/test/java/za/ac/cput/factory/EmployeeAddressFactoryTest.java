@@ -6,17 +6,22 @@ package za.ac.cput.factory;
 */
 import org.junit.jupiter.api.Test;
 import za.ac.cput.domain.Address;
+import za.ac.cput.domain.City;
+import za.ac.cput.domain.Country;
 import za.ac.cput.domain.EmployeeAddress;
 import static org.junit.jupiter.api.Assertions.*;
 
 class EmployeeAddressFactoryTest {
+    Country country = CountryFactory.build("RSA","South Africa");
+    City city = CityFactory.createCity("CPT", "Cape Town", country);
     Address address = AddressFactory.createAddress(
             "10",
             "Complex 1",
             "10",
             "Street Street",
             1000,
-            null
+            city
+
     );
 
     @Test
