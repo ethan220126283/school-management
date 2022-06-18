@@ -12,7 +12,7 @@ public class StudentFactoryTest extends TestCase {
 
     @Test
     public void test() throws IllegalAccessException {
-        Student student= StudentFactory.createStudent("gdrg", NameFactory.createName("sfd","sdfd","sdf"));
+        Student student= StudentFactory.createStudent("ghdf","gdrg", NameFactory.createName("sfd","sdfd","sdf"));
         System.out.println(student);
         assertNotNull(student);
     }
