@@ -17,8 +17,8 @@ import static org.junit.jupiter.api.Assertions.assertAll;
 
 class EmployeeAddressServiceImplTest {
 
-    private final Country country = CountryFactory.build("South Africa","12");
-    private final City city = CityFactory.createCity("1","Cape Town");
+    private final Country country = CountryFactory.createCountry("South Africa","12");
+    private final City city = CityFactory.createCity("1","Cape Town",null);
     private final Address address = AddressFactory.createAddress("1", "Complex 1", "5", "Street Street",  1000, city);
     private final EmployeeAddress employeeAddress = EmployeeAddressFactory.build("12", address);
 
