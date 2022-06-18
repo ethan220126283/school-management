@@ -25,12 +25,12 @@ public  class CountryServiceImpl implements CountryService {
     public Optional<Country> read (Country.CountryId countryId) {
         return this.repository.findById(countryId);
     }
-*/
+
     //@Override
    // public Optional<Country> read(Country.CountryIdentity countryIdentity) {
      //   return this.repository.findById(countryIdentity);
   //  }
-/*
+
     @Override
     public void delete(Country country) {
         this.repository.delete(country);
@@ -46,4 +46,5 @@ public  class CountryServiceImpl implements CountryService {
     public List findByCountryId(String countryId) {
         return this.repository.findByCountryId(countryId);
     }
-}*/
+}
+*/
