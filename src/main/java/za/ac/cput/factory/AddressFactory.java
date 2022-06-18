@@ -13,19 +13,13 @@ public class AddressFactory {
 
     public static Address createAddress(String unitNumber, String complexName, String streetNumber, String streetName, int postalCode, City city) {
 
-        if( streetNumber == null||streetNumber.equals("")){
-            throw new IllegalArgumentException("streetNumber is required.");
-        }
-        if( streetName == null ||streetName.equals("")){
-            throw new IllegalArgumentException("streetName is required.");
+        if(Helper.isNullorEmpty(streetNumber) || Helper.isNullorEmpty(streetName) || Helper.isNullorEmpty(String.valueOf(city))){
+            throw new IllegalArgumentException("streetNumber, streetName and city is required.");
         }
         if(postalCode < 1000){
             throw new IllegalArgumentException("postalCode must be between 1000-9999");
         }else if(postalCode > 9000){
             throw new IllegalArgumentException("postalCode must be between 1000-9999");
-        }
-        if(city == null || city.equals("")){
-            throw new IllegalArgumentException("city is required.");
         }
 
         return new Address.Builder(streetNumber)
