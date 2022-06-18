@@ -22,7 +22,7 @@ public class AddressServiceImpl implements IAddressService {
         this.repository = AddressRepositoryImpl.addressRepository();
     }
 
-    public static IAddressService getService(){
+    public static IAddressService addressService(){
         if(ADDRESS_SERVICE == null)
             ADDRESS_SERVICE = new AddressServiceImpl();
         return ADDRESS_SERVICE;

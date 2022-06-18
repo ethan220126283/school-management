@@ -28,7 +28,7 @@ public class AddressRepositoryImpl implements AddressRepository {
     }
 
     public Address save(Address address){
-        Optional<Address> read = read(address.getUnitNumber());
+        Optional<Address> read = read(address.getStreetNumber());
         if(read.isPresent()){
             delete(read.get());
         }

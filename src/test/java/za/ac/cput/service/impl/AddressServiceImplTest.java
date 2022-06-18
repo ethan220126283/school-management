@@ -32,7 +32,7 @@ public class AddressServiceImplTest {
         city = CityFactory.createCity("7", "Cape Town");
         address = AddressFactory.createAddress("H0307", "Struben Park", "123", "Main Street", 7755, city);
 
-        this.service = AddressServiceImpl.getService();
+        this.service = AddressServiceImpl.addressService();
     }
 
     @AfterEach
