@@ -16,7 +16,7 @@ import static org.junit.jupiter.api.Assertions.*;
 public class AddressFactoryTest {
 
     private Country country = CountryFactory.build("South Africa", "South Africa");
-    private City city = CityFactory.createCity("7", "Cape Town");
+    private City city = CityFactory.createCity("7", "Cape Town", country);
 
     @org.junit.jupiter.api.Test
     void createAddress() {
