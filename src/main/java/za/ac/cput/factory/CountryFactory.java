@@ -13,18 +13,12 @@ public class CountryFactory {
             throw new IllegalArgumentException("countryId is needed here!");
         if (countryName== null|| countryName.isEmpty())
             throw new IllegalArgumentException("countryName is needed here!");
-        return new Country.Builder().countryId(countryId).countryName(countryName).build();
-    }
+        return new Country.Builder().countryId(countryId).name(countryName).build();
+    
 
-    public static Country.CountryId build(Country country) {
-        return new Country.CountryId(country.getCountryId());
-    }
 
-    public static Country bi(String countryId, String countryName) {
-        if (Helper.isNullorEmpty(countryId) || Helper.isNullorEmpty(countryName))
-            return null;
-        return null;
-        }
+ 
+    }   
 
 }
 
