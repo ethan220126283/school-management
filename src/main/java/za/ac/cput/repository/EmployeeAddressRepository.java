@@ -5,7 +5,11 @@ package za.ac.cput.repository;
     Author: Lana Africa (216166640)
 */
 import org.springframework.data.jpa.repository.JpaRepository;
-import za.ac.cput.domain.Employee;
+import org.springframework.stereotype.Repository;
+import za.ac.cput.domain.EmployeeAddress;
 
-public interface EmployeeAddressRepository extends JpaRepository<Employee, String> {
+
+@Repository
+public interface EmployeeAddressRepository extends JpaRepository<EmployeeAddress, String> {
+
 }
