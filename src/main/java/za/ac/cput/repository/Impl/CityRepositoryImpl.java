@@ -12,7 +12,7 @@ import java.util.Optional;
  * Student Number - 206006330
  */
 
-//public class CityRepositoryImpl implements CityRepository {
+public class CityRepositoryImpl implements CityRepository {
 
     //CRUD data store
 
@@ -39,7 +39,7 @@ import java.util.Optional;
         //return all in your store
         return null;
     }*/
-/*
+
     private final List<City> cityList;
     private static CityRepositoryImpl CITY_REPOSITORY;
 
@@ -73,4 +73,4 @@ import java.util.Optional;
     public List<City> findAll() {
         return null;
     }
-}*/
+}

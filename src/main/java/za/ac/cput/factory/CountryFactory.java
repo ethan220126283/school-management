@@ -24,13 +24,7 @@ public class CountryFactory {
         if (Helper.isNullorEmpty(countryId) || Helper.isNullorEmpty(countryName))
             return null;
         return null;
-
-            /* if (!Helper.isValidEmail(email)) {
-            System.out.println("Email is not valid");
-            return null;
         }
 
-            */
-    }
 }
 

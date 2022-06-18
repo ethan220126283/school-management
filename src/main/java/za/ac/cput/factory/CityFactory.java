@@ -1,6 +1,7 @@
 package za.ac.cput.factory;
 
 import za.ac.cput.domain.City;
+import za.ac.cput.domain.Country;
 import za.ac.cput.util.Helper;
 
 /**
@@ -10,17 +11,14 @@ import za.ac.cput.util.Helper;
 
 public class CityFactory {
     //Creating User Objects
-    public static City createCity(String id, String name){
+    public static City createCity(String id, String name, Country country) {
 
         if (Helper.isNullorEmpty(id) || Helper.isNullorEmpty(name))
             throw new IllegalArgumentException("id and or name");
-            return new City.Builder()
-                .setId(id)
-                .setName(name)
+        return new City.Builder(id)
+                .theirName(name)
+                .theirCountry(country)
                 .build();
     }
 
-    public static City build(String id, String name) {
-        return null;
-    }
 }
